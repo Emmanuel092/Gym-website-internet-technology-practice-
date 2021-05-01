@@ -1,0 +1,93 @@
+html {
+  width: 100%;                    /* 100% width of parent (root) element */
+  height: 100vh;                  /* 100% height of viewport */
+  background: rgba(224, 6, 6, 0);  /* 10% opacity black (very light gray) */
+  font-size: 1.0em;               /* our root font size */
+}
+body {
+  margin: 0;                      /* content goes to edge of viewport */
+  height: 100vh;                  /* and spans height of viewport */
+}
+div.container {
+  min-height: 25rem;            /* mainbody height never squishes < 25rem */
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns:
+    [left] 10rem auto 10rem [right];
+  grid-template-rows:
+    [top] 5rem auto 5rem [bottom];
+  grid-template-areas:
+    "head head head"
+    "panleft mainbody panright"
+    "foot foot foot";
+}
+div.header {
+  background: rgb(184, 62, 6);                             /* 20% black */
+  grid-area: head;                /* head corresponds to name in template */
+}
+div.footer {
+  background: rgb(184, 62, 6);
+  grid-area: foot;
+}
+div.panel {                            /* div elements with "panel" class */
+  background: rgba(165, 2, 2, 0.1);                             /* 10% black */
+}
+.div.sidenav{
+  width: 200px;
+  height: 100%;
+  background: #4b4276;
+  padding: 30px 0px;
+  position: fixed;
+}
+.div.sidenav ul li{
+  padding: 15px;
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(138, 9, 9, 0.05);
+  border-top: 1px solid rgba(116, 2, 2, 0.05);
+}   
+
+.div.sidenav ul li a{
+  color: #bdb8d7;
+  display: block;
+}
+
+.div.sidenav ul li a .fas{
+  width: 25px;
+}
+
+.div.sidenav ul li:hover{
+  background-color: #594f8d;
+}
+    
+.div.sidenav ul li:hover a{
+  color: #fff;
+}
+div.panel.right {
+  grid-area: panright;
+
+}
+div.mainbody {
+  background-color: rgb(179, 148, 11);   
+
+  grid-area: mainbody;
+  width: 70rem;                   /* mainbody width is fixed */ justify-self: center;           /* and always centered in grid area */
+}
+
+
+
+@media screen and (max-width: 50rem) {     /* if viewport width < 50rem */
+  div.panel.left {
+    grid-column-end: left;            /* left panel stops at left edge */
+  }
+  div.panel.right {
+    grid-column-start: right;         /* right panel starts at right edge */
+  }
+  div.panel {
+    display: none;                    /* neither panel is displayed */
+  }
+  div.mainbody {
+    grid-column-start: left;          /* mainbody starts at left edge */
+    grid-column-end: right;           /* mainbody ends at right edge */
+  }
+}
