@@ -3,6 +3,7 @@ html {
   height: 100vh;                  /* 100% height of viewport */
   background:beige ; /* 10% opacity black (very light gray) */
   font-size: 1.0em;               /* our root font size */
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
 }
 
 body {
@@ -57,7 +58,7 @@ div.panel {                            /* div elements with "panel" class */
    border-bottom-right-radius: 80px;
   transition: all 0.5s ease;
 }
-
+.container  .sidebar ul {list-style: none;}
 .container  .sidebar ul li a{
     display: block;
     padding: 30px;
@@ -86,7 +87,7 @@ div.panel {                            /* div elements with "panel" class */
 
 .container .sidebar ul li a:hover,
 .container .sidebar ul li a.active{
-  background:grey;
+  background:blue;
   color:grey
 }
 
@@ -111,41 +112,29 @@ div.panel {                            /* div elements with "panel" class */
   display: none;
 }
 
-
-
-
-
-div.sidebar {
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 div.panel.right {
   grid-area: panright;
   border-bottom-left-radius: 80px;
+  color: violet;
+
 }
+div.panel.right h2 { text-align: center;margin: 1ex;}
+div.panel.right li { margin: 1ex;}
+
 div.mainbody {
   background-color:beige; 
   text-align: center; 
+  font-size: 1.25em;
+
 
 
   grid-area: mainbody;
   width: 70rem;                   /* mainbody width is fixed */ justify-self: center;           /* and always centered in grid area */
 }
 
-
+div.mainbody *{margin:2em 1em;  }
+div.mainbody * *{margin:1em 0;  } 
+div.mainbody h1 {   color: navy;  text-indent: 30px;text-transform: uppercase; }
 
 @media screen and (max-width: 50rem) {     /* if viewport width < 50rem */
   div.panel.left {
