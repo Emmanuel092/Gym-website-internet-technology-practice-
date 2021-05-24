@@ -3,7 +3,7 @@ html {
   height: 100vh;                  /* 100% height of viewport */
   background:beige ; /* 10% opacity black (very light gray) */
   font-size: 1.0em;               /* our root font size */
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow ', sans-serif ;
 }
 
 body {
@@ -29,21 +29,23 @@ div.container {
 
 
 div.header {
-  background:gray;                             /* 20% black */
+  background:maroon;                             /* 20% black */
   grid-area: head; 
   text-align: left; 
- text-decoration-color:brown;
+ text-decoration-color:none;
 
 }
+div.header h2 {   color:beige ;  text-indent: 15px;text-transform: lowercase }
 
 
 div.footer {
-  background: grey;
+  background:maroon;
   grid-area: foot;
   text-align :center;
 }
 div.panel {                            /* div elements with "panel" class */
-  background:bisque;                             /* 10% black */
+  background:brown; 
+  color:beige;                            /* 10% black */
 }
 
 
@@ -52,7 +54,7 @@ div.panel {                            /* div elements with "panel" class */
   top: 80px;
   left: 0px;
   bottom:80px;
-  background:bisque;   
+  background:brown;   
   width: 100px;
    /*height: calc(100% - 100px);*/
    border-bottom-right-radius: 80px;
@@ -76,19 +78,19 @@ div.panel {                            /* div elements with "panel" class */
   left: 0;
   width: 10px;
   height: 100%;
-  background:grey;
+  background:none;
   display: none;
 }
 
 
 .container .sidebarul li a span.title{
   display: inline-block;
+
 }
 
 .container .sidebar ul li a:hover,
 .container .sidebar ul li a.active{
-  background:blue;
-  color:grey
+  background:#FF0000;
 }
 
 .container .sidebar ul li a:hover:before,
@@ -115,8 +117,15 @@ div.panel {                            /* div elements with "panel" class */
 div.panel.right {
   grid-area: panright;
   border-bottom-left-radius: 80px;
-  color: violet;
+  color: beige;
 
+}
+
+
+div.sidebar{
+  grid-area: panleft;
+ /* border-bottom-left-radius: 80px;*/
+  color: beige;
 }
 div.panel.right h2 { text-align: center;margin: 1ex;}
 div.panel.right li { margin: 1ex;}
@@ -134,7 +143,13 @@ div.mainbody {
 
 div.mainbody *{margin:2em 1em;  }
 div.mainbody * *{margin:1em 0;  } 
-div.mainbody h1 {   color: navy;  text-indent: 30px;text-transform: uppercase; }
+div.mainbody h1 {   color:#c11515;  text-indent: 30px;text-transform: uppercase; }
+div.mainbody h3  {   color:black;  text-indent: 30px;text-transform:uppercase; }
+div.mainbody p {   color:black;  text-indent: 15px;text-transform:lowercase; }
+div.mainbody h4 {   color:black;  text-indent: 15px;text-transform: lowercase }
+
+
+
 
 @media screen and (max-width: 50rem) {     /* if viewport width < 50rem */
   div.panel.left {
