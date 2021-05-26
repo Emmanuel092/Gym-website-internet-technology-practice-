@@ -1,9 +1,9 @@
 html {
   width: 100%;                    /* 100% width of parent (root) element */
   height: 100vh;                  /* 100% height of viewport */
-  background:beige ; /* 10% opacity black (very light gray) */
+  background:beige ; /* 10% opacity () */
   font-size: 1.0em;               /* our root font size */
-  font-family:Impact, Haettenschweiler, 'Arial Narrow ', sans-serif ;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow ', sans-serif ;    /* our root font family */
 }
 
 body {
@@ -29,7 +29,7 @@ div.container {
 
 
 div.header {
-  background:maroon;                             /* 20% black */
+  background:maroon;                             /* head background colour maroon*/
   grid-area: head; 
   text-align: left; 
  text-decoration-color:none;
@@ -42,11 +42,12 @@ div.footer {
   background:maroon;
   grid-area: foot;
   text-align :center;
-}
-div.panel {                            /* div elements with "panel" class */
+}    
+div.panel {                            /* div elements with "panel" class, right panel */ 
   background:brown; 
-  color:beige;                            /* 10% black */
+  color:beige;                           
 }
+
 
 
 .container .sidebar{
@@ -58,14 +59,15 @@ div.panel {                            /* div elements with "panel" class */
   width: 100px;
    /*height: calc(100% - 100px);*/
    border-bottom-right-radius: 80px;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 .container  .sidebar ul {list-style: none;}
 .container  .sidebar ul li a{
     display: block;
     padding: 30px;
+    color:beige;
     
-    position: relative;
+    position:relative ;
     margin-bottom: 40px;
 
     white-space: nowrap;
@@ -88,14 +90,17 @@ div.panel {                            /* div elements with "panel" class */
 
 }
 
+
 .container .sidebar ul li a:hover,
 .container .sidebar ul li a.active{
   background:#FF0000;
+  color:beige
 }
 
 .container .sidebar ul li a:hover:before,
 .container .sidebar ul li a.active:before{
   display: block;
+ 
 }
 
 .container .sidebar{
@@ -110,6 +115,7 @@ div.panel {                            /* div elements with "panel" class */
   margin: 0;
 }
 
+
 .container.collapse .sidebar ul li a span.title{
   display: none;
 }
@@ -122,13 +128,8 @@ div.panel.right {
 }
 
 
-div.sidebar{
-  grid-area: panleft;
- /* border-bottom-left-radius: 80px;*/
-  color: beige;
-}
-div.panel.right h2 { text-align: center;margin: 1ex;}
-div.panel.right li { margin: 1ex;}
+div.panel.right h2 { text-align: center;margin: 1.0ex;}
+div.panel.right li { margin: 1.0ex;}
 
 div.mainbody {
   background-color:beige; 
@@ -143,12 +144,11 @@ div.mainbody {
 
 div.mainbody *{margin:2em 1em;  }
 div.mainbody * *{margin:1em 0;  } 
+
 div.mainbody h1 {   color:#c11515;  text-indent: 30px;text-transform: uppercase; }
 div.mainbody h3  {   color:black;  text-indent: 30px;text-transform:uppercase; }
 div.mainbody p {   color:black;  text-indent: 15px;text-transform:lowercase; }
 div.mainbody h4 {   color:black;  text-indent: 15px;text-transform: lowercase }
-
-
 
 
 @media screen and (max-width: 50rem) {     /* if viewport width < 50rem */
